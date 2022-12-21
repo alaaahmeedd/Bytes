@@ -15,8 +15,8 @@ return new class extends Migration
     {
         Schema::create('licenes', function (Blueprint $table) {
             $table->id();
-            $table->integer('product_id')->unsigned();
             $table->integer('user_id')->unsigned();
+            $table->integer('product_id')->unsigned();
             $table->integer('type_id')->unsigned();
             $table->integer('payment_id')->unsigned();
             $table->date('start_time');

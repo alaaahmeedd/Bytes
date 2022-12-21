@@ -8,4 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class Config_Action extends Model
 {
     use HasFactory;
+
+    protected $fillabel = [
+        'name',
+    ];
 }

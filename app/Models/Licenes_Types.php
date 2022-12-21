@@ -8,4 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class Licenes_Types extends Model
 {
     use HasFactory;
+
+    protected $fillable = [
+        'name',
+    ];
 }
