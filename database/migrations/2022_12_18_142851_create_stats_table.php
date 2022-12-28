@@ -14,7 +14,7 @@ return new class extends Migration
     public function up()
     {
         Schema::create('stats', function (Blueprint $table) {
-            $table->id();
+            $table->bigIncrements('id');;
             $table->string('name',50);
         });
     }

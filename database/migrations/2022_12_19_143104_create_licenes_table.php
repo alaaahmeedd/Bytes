@@ -14,16 +14,35 @@ return new class extends Migration
     public function up()
     {
         Schema::create('licenes', function (Blueprint $table) {
-            $table->id();
-            $table->integer('user_id')->unsigned();
-            $table->integer('product_id')->unsigned();
-            $table->integer('type_id')->unsigned();
-            $table->integer('payment_id')->unsigned();
+            $table->increments('id');
+            $table->unsignedBiginteger('user_id');
+            $table->unsignedBiginteger('product_id');
+            $table->unsignedBiginteger('type_id');
+            $table->unsignedBiginteger('payment_id');
             $table->date('start_time');
             $table->date('end_time');
             $table->integer('Qauta');
             $table->integer('Max_Qauta');
             $table->timestamps();
+            $table->foreign('user_id')
+            ->references('id')
+            ->on('users')
+            ->onDelete('cascade');
+
+            // $table->foreign('product_id')
+            // ->references('id')
+            // ->on('products')
+            // ->onDelete('cascade');
+
+            $table->foreign('type_id')
+            ->references('id')
+            ->on('licenes__types')
+            ->onDelete('cascade');
+
+            $table->foreign('payment_id')
+            ->references('id')
+            ->on('payments')
+            ->onDelete('cascade');
         });
     }
 

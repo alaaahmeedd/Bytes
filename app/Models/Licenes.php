@@ -20,4 +20,21 @@ class Licenes extends Model
         'Qauta',
         'Max_Qauta'
     ];
+
+    public function users(){
+        return $this->belongsTo(User::class);
+    }
+
+    public function products(){
+        return $this->belongsTo(Product::class);
+    }
+
+    public function types(){
+        return $this->belongsTo(Licenes_Types::class);
+    }
+
+    public function payments(){
+        return $this->belongsTo(Payment::class);
+    }
+    
 }

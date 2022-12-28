@@ -12,10 +12,22 @@ class Support extends Model
     protected $fillabel = [
         'account_id',
         'product_id',
-        'states_id',
+        'stats_id',
         'contact_info',
         'message',
         'info'
     ];
+
+    public function products(){
+        return $this->belongsTo(Product::class);
+    }
+
+    public function states(){
+        return $this->belongsTo(Stats::class);
+    }
+
+    public function notes(){
+        return $this->hasMany(Notes::class);
+    }
 
 }

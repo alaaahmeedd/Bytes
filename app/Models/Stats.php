@@ -12,4 +12,8 @@ class Stats extends Model
     protected $fillabel = [
         'name'
     ];
+
+    public function support(){
+        return $this->hasMany(Support::class);
+    }
 }

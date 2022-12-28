@@ -13,4 +13,8 @@ class Notes extends Model
         'support_id',
         'Text',
     ];
+
+    public function supports(){
+        return $this->belongsTo(Support::class);
+    }
 }

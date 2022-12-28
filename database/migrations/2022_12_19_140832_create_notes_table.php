@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('notes', function (Blueprint $table) {
             $table->id();
-            $table->integer('support_id')->unsigned();
+            $table->unsignedBiginteger('support_id');
             $table->text('Text');
         });
     }

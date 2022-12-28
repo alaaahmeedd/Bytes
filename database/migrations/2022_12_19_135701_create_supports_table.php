@@ -14,14 +14,27 @@ return new class extends Migration
     public function up()
     {
         Schema::create('supports', function (Blueprint $table) {
-            $table->id();
-            $table->integer('account_id')->unsigned();
-            $table->integer('product_id')->unsigned();
-            $table->integer('states_id')->unsigned();
+            $table->BigIncrements('id');
+            $table->unsignedBiginteger('account_id');
+            $table->unsignedBiginteger('product_id');
+            $table->unsignedBiginteger('stats_id');
             $table->string('contact_info',125);
             $table->text('message');
             $table->text('info');
             $table->timestamps();
+         
+            $table->foreign('product_id')
+            ->references('id')
+            ->on('products')
+            ->onDelete('cascade');
+
+            $table->foreign('stats_id')
+            ->references('id')
+            ->on('stats')
+            ->onDelete('cascade');
+
+            
+
         });
     }
 

@@ -15,4 +15,12 @@ class Product extends Model
         'current_version',
         'thumbnail',
     ];
+
+    public function licenes(){
+        return $this->hasMany(Licenes::class);
+    }
+
+    public function supports(){
+        return $this->hasMany(Support::class);
+    }
 }

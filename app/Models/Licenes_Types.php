@@ -12,4 +12,8 @@ class Licenes_Types extends Model
     protected $fillable = [
         'name',
     ];
+
+    public function licenes(){
+        return $this->hasMany(Licenes::class);
+    }
 }

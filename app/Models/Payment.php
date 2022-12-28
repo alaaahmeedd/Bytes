@@ -12,4 +12,8 @@ class Payment extends Model
     protected $fillabel = [
         'method',
     ];
+
+    public function licenes(){
+        return $this->hasMany(Licenes::class);
+    }
 }
