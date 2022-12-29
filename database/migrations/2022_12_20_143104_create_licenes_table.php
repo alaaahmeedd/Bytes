@@ -14,7 +14,7 @@ return new class extends Migration
     public function up()
     {
         Schema::create('licenes', function (Blueprint $table) {
-            $table->increments('id');
+            $table->bigIncrements('id');
             $table->unsignedBiginteger('user_id');
             $table->unsignedBiginteger('product_id');
             $table->unsignedBiginteger('type_id');
@@ -29,10 +29,10 @@ return new class extends Migration
             ->on('users')
             ->onDelete('cascade');
 
-            // $table->foreign('product_id')
-            // ->references('id')
-            // ->on('products')
-            // ->onDelete('cascade');
+            $table->foreign('product_id')
+            ->references('id')
+            ->on('products')
+            ->onDelete('cascade');
 
             $table->foreign('type_id')
             ->references('id')

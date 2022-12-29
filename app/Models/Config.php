@@ -16,6 +16,15 @@ class Config extends Model
         'product_version'
     ];
 
+    public function product(){
+        return $this->belongsTo(Product::class);
+    }
+
+    public function Config_Action(){
+        return $this->belongsTo(Config_Action::class);
+    }
+    
+
 
 
     

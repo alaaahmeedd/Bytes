@@ -23,4 +23,8 @@ class Product extends Model
     public function supports(){
         return $this->hasMany(Support::class);
     }
+
+    public function configs(){
+        return $this->hasMany(Config::class);
+    }
 }

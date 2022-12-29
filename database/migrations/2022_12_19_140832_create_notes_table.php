@@ -14,9 +14,13 @@ return new class extends Migration
     public function up()
     {
         Schema::create('notes', function (Blueprint $table) {
-            $table->id();
+            $table->bigIncrements('id');
             $table->unsignedBiginteger('support_id');
             $table->text('Text');
+            $table->foreign('support_id')
+            ->references('id')
+            ->on('supports')
+            ->onDelete('cascade');
         });
     }
 

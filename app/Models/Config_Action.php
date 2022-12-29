@@ -12,4 +12,8 @@ class Config_Action extends Model
     protected $fillabel = [
         'name',
     ];
+
+    public function configs(){
+        return $this->hasMany(Config::class);
+    }
 }
